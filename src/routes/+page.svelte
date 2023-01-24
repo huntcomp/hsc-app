@@ -1,59 +1,45 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import splash from '$lib/images/splash.webp';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Hunt: SC</title>
+	<meta name="description" content="The Hunt Showdown: Companion is an app to track your encounter statistics." />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<div class="splash-accent" />
+	<h1>Hunt'em<br />retaliation</h1>
+	<p class="accent">The Hunt Showdown Companion</p>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+	:global(body) {
+		background-image: url('/splash.webp');
+		background-size: cover;
+		background-position: 50% 45%;
+	}
+
+	.splash-accent {
+		position: absolute;
+		top: 45%;
+		left: 55%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+		height: 70%;
+		clip-path: polygon(89% 0, 0 98%, 66% 76%);
+		background-color: rgba(14, 15, 21, 0.9);
+		z-index: -1;
 	}
 
 	h1 {
-		width: 100%;
+		font-size: 64px;
+		text-align: center;
+		line-height: 1.25;
+		margin: 24px;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	p {
+		text-align: center;
 	}
 </style>

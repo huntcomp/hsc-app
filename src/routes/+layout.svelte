@@ -1,53 +1,31 @@
 <script>
-	import Header from './Header.svelte';
 	import './styles.css';
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>
+			<span class="accent">This is <strong>NOT</strong> official Crytek product.</span> “The Hunt Showdown: Companion” is fan-made, free to use,
+			non-commercial project. <a href="#"><strong>Read more</strong></a>.
+		</p>
 	</footer>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
 	footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 54px;
+		background-color: rgba(14, 15, 21, 0.9);
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+		font-size: 14px;
 	}
 </style>
