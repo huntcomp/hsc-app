@@ -1,7 +1,3 @@
-<script>
-	import splash from '$lib/images/splash.webp';
-</script>
-
 <svelte:head>
 	<title>Hunt: SC</title>
 	<meta name="description" content="The Hunt Showdown: Companion is an app to track your encounter statistics." />
