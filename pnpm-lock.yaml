@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/fira-mono': ^4.5.10
+  '@fontsource/pt-serif': ^4.5.11
   '@neoconfetti/svelte': ^1.0.0
   '@playwright/test': ^1.28.1
   '@sveltejs/adapter-vercel': ^1.0.0
@@ -19,7 +19,7 @@ specifiers:
   vitest: ^0.25.3
 
 devDependencies:
-  '@fontsource/fira-mono': 4.5.10
+  '@fontsource/pt-serif': 4.5.11
   '@neoconfetti/svelte': 1.0.0
   '@playwright/test': 1.28.1
   '@sveltejs/adapter-vercel': 1.0.0_@sveltejs+kit@1.0.0
@@ -253,8 +253,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/fira-mono/4.5.10:
-    resolution: {integrity: sha512-bxUnRP8xptGRo8YXeY073DSpfK74XpSb0ZyRNpHV9WvLnJ7TwPOjZll8hTMin7zLC6iOp59pDZ8EQDj1gzgAQQ==}
+  /@fontsource/pt-serif/4.5.11:
+    resolution: {integrity: sha512-/j/JFq8nIpd0Y01CiUzLmzSTaFtEAVMNLDD+jv5HTxA7McRddlkuovE90jbI06BaKsc6Z8BNbxUKPTeC17IKLg==}
     dev: true
 
   /@humanwhocodes/config-array/0.11.8:
