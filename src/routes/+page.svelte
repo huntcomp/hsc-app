@@ -1,6 +1,9 @@
 <svelte:head>
 	<title>Hunt: SC</title>
-	<meta name="description" content="The Hunt Showdown: Companion is an app to track your encounter statistics." />
+	<meta
+		name="description"
+		content="The Hunt Showdown: Companion is an app to track your encounter statistics."
+	/>
 </svelte:head>
 
 <section>
@@ -16,16 +19,27 @@
 		background-position: 50% 45%;
 	}
 
+	section {
+		position: relative;
+	}
+
 	.splash-accent {
 		position: absolute;
 		top: 45%;
 		left: 55%;
 		transform: translate(-50%, -50%);
-		width: 40%;
-		height: 70%;
+		width: 375px;
+		height: 500px;
 		clip-path: polygon(89% 0, 0 98%, 66% 76%);
 		background-color: rgba(14, 15, 21, 0.9);
 		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		.splash-accent {
+			width: 400px;
+			height: 600px;
+		}
 	}
 
 	h1 {

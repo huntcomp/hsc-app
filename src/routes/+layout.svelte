@@ -21,11 +21,16 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: 54px;
+		padding: 16px;
 		background-color: rgba(14, 15, 21, 0.9);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		font-size: 14px;
+		text-align: center;
+	}
+
+	footer > p {
+		margin: 0;
 	}
 </style>
