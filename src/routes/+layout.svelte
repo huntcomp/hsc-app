@@ -26,7 +26,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 14px;
+		font-size: 12px;
 		text-align: center;
 	}
 
