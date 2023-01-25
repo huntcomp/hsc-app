@@ -1,15 +1,15 @@
 <svelte:head>
-	<title>Hunt: SC</title>
+	<title>Hunt Companion</title>
 	<meta
 		name="description"
-		content="The Hunt Showdown: Companion is an app to track your encounter statistics."
+		content="Hunt Companion is an app to track your encounter statistics"
 	/>
 </svelte:head>
 
 <section>
-	<div class="splash-accent" />
+	<img class="splash-accent" src="/tooth4tooth.svg" />
 	<h1>Hunt'em<br />retaliation</h1>
-	<p class="accent">The Hunt Showdown Companion</p>
+	<p>The Hunt (Showdown) Companion</p>
 </section>
 
 <style>
@@ -17,6 +17,7 @@
 		background-image: url('/splash.webp');
 		background-size: cover;
 		background-position: 50% 45%;
+		backdrop-filter: blur(2px);
 	}
 
 	section {
@@ -25,20 +26,17 @@
 
 	.splash-accent {
 		position: absolute;
-		top: 45%;
-		left: 55%;
+		top: 50%;
+		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 375px;
-		height: 500px;
-		clip-path: polygon(89% 0, 0 98%, 66% 76%);
-		background-color: rgba(14, 15, 21, 0.9);
+		height: auto;
 		z-index: -1;
 	}
 
 	@media (min-width: 768px) {
 		.splash-accent {
 			width: 400px;
-			height: 600px;
 		}
 	}
 
@@ -47,6 +45,8 @@
 		text-align: center;
 		line-height: 1.25;
 		margin: 24px;
+		color: #EA2B1F;
+		letter-spacing: 3px;
 	}
 
 	p {

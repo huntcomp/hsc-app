@@ -9,7 +9,7 @@
 
 	<footer>
 		<p>
-			<span class="accent">This is <strong>NOT</strong> official Crytek product.</span> “The Hunt Showdown: Companion” is fan-made, free to use,
+			<span>This is <strong>NOT</strong> official Crytek product.</span> The "Hunt Companion" is fan-made, free to use,
 			non-commercial project. <a href="#"><strong>Read more</strong></a>.
 		</p>
 	</footer>

@@ -1,0 +1,16 @@
+{
+  "short_name": "hsc",
+  "name": "Hunt Companion",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0E0F15",
+  "description": "Hunt Companion is an app to track your encounter statistics"
+}
