@@ -33,3 +33,28 @@ h5,
 h6 {
 	font-family: var(--font-serif);
 }
+
+table {
+	width: 100%;
+	table-layout: auto;
+}
+
+th,
+td {
+	text-align: center;
+}
+
+th,
+td {
+	@apply pb-1;
+}
+
+th:first-child,
+td:first-child {
+	text-align: left;
+}
+
+th:last-child,
+td:last-child {
+	text-align: right;
+}
