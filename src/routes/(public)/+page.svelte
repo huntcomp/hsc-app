@@ -5,7 +5,7 @@
 <section class="flex flex-col items-center justify-center text-white">
 	<Logo style="width: 100px;" />
 
-	<h1 class="text-6xl text-center tracking-tight my-8">Hunt'em<br />retaliation</h1>
+	<h1 class="my-8 text-center text-6xl tracking-tight">Hunt'em<br />retaliation</h1>
 	<p class="text-center">The Hunt (Showdown) Companion</p>
 </section>
 

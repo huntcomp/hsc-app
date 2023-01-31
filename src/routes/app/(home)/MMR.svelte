@@ -7,16 +7,16 @@
 	let change = 30;
 </script>
 
-<section class="grid justify-center gap-3 gap-y-1 mb-8">
-	<h1 class="grid-value text-7xl font-bold justify-self-end">{mmr}</h1>
+<section class="mb-8 grid justify-center gap-3 gap-y-1">
+	<h1 class="grid-value justify-self-end text-7xl font-bold">{mmr}</h1>
 	<div class="grid-change align-baseline">
 		{#if change >= 0}
 			<span class="align-middle text-gold">+{change}</span><ArrowRightUp
-				class="w-4 inline align-text-top fill-gold"
+				class="inline w-4 fill-gold align-text-top"
 			/>
 		{:else if change < 0}
 			<span class="align-middle text-red">{change}</span><ArrowRightDown
-				class="w-4 inline align-text-top fill-red"
+				class="inline w-4 fill-red align-text-top"
 			/>
 		{/if}
 	</div>

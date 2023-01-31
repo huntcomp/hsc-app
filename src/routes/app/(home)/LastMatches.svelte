@@ -24,14 +24,14 @@
 			mmr: 2832
 		},
 		{
-			date: '2023-01-30T19:25:00.000Z',
+			date: '2023-01-29T19:25:00.000Z',
 			result: 'death',
 			kills: ['C'],
 			deaths: ['D', 'E'],
 			mmr: 2842
 		},
 		{
-			date: '2023-01-30T19:03:00.000Z',
+			date: '2023-01-29T19:03:00.000Z',
 			result: 'bounty:2',
 			kills: ['C'],
 			deaths: [],
@@ -48,8 +48,8 @@
 			<tr class="text-xs text-gray-500">
 				<th>Summary</th>
 				<th
-					><Focus class="w-3 inline fill-current" /><span class="align-middle mx-1">/</span><Skull
-						class="w-3 inline fill-current"
+					><Focus class="inline w-3 fill-current" /><span class="mx-1 align-middle">/</span><Skull
+						class="inline w-3 fill-current"
 					/></th
 				>
 				<th>MMR</th>
@@ -60,11 +60,11 @@
 				<tr
 					><td class="align-middle"
 						>{#if match.result.startsWith('bounty')}
-							<Trophy class="w-5 inline fill-gold" />
+							<Trophy class="inline w-5 fill-gold" />
 						{:else if match.result === 'exit'}
-							<DoorOpen class="w-5 inline fill-gray-500" />
+							<DoorOpen class="inline w-5 fill-gray-500" />
 						{:else if match.result === 'death'}
-							<Skull class="w-5 inline fill-red" />
+							<Skull class="inline w-5 fill-red" />
 						{/if}
 						<span class="ml-1 align-middle"
 							>{formatDistanceToNow(new Date(match.date), { addSuffix: true })}</span
@@ -84,9 +84,9 @@
 								>{#if match.mmr - matches[i + 1].mmr > 0}+{/if}{match.mmr -
 									matches[i + 1].mmr}</span
 							>{#if match.mmr - matches[i + 1].mmr > 0}<ArrowRightUp
-									class="w-4 inline align-text-top fill-gold"
+									class="inline w-4 fill-gold align-text-top"
 								/>{/if}{#if match.mmr - matches[i + 1].mmr < 0}<ArrowRightDown
-									class="w-4 inline align-text-top fill-red"
+									class="inline w-4 fill-red align-text-top"
 								/>{/if}{/if}<span class="align-middle">{match.mmr}</span></td
 					></tr
 				>
