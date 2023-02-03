@@ -1,10 +1,27 @@
-<script>
+<script lang="ts">
 	import MMRStars from '$lib/MMRStars.svelte';
 	import ArrowRightUp from 'remixicon/icons/System/arrow-right-up-line.svg';
 	import ArrowRightDown from 'remixicon/icons/System/arrow-right-down-line.svg';
+	import { supabase } from '$lib/supabaseClient';
+	import { onMount } from 'svelte';
 
-	let mmr = 2852;
-	let change = 30;
+	let games: any[] = [];
+
+	onMount(async () => {
+		games = await supabase
+			.from('games')
+			.select(
+				`
+			mmr
+		`
+			)
+			.order('created_at', { ascending: false })
+			.limit(2)
+			.then((a) => a.data ?? []);
+	});
+
+	$: mmr = games[0]?.mmr ?? 0;
+	$: change = (games[0]?.mmr ?? 0) - (games[1]?.mmr ?? 0);
 </script>
 
 <section class="mb-8 grid justify-center gap-3 gap-y-1">

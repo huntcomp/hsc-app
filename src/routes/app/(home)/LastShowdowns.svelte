@@ -3,42 +3,28 @@
 	import Skull from 'remixicon/icons/User/skull-line.svg';
 	import Focus from 'remixicon/icons/Design/focus-3-line.svg';
 	import ArrowUpDown from 'remixicon/icons/System/arrow-up-down-line.svg';
+	import { onMount } from 'svelte';
+	import { supabase } from '$lib/supabaseClient';
 
-	const showdowns = [
-		{
-			name: 'Rachta',
-			match: {
-				kills: 1,
-				deaths: 1
-			},
-			total: {
-				kills: 3,
-				deaths: 6
-			}
-		},
-		{
-			name: '0x4731',
-			match: {
-				kills: 0,
-				deaths: 2
-			},
-			total: {
-				kills: 7,
-				deaths: 3
-			}
-		},
-		{
-			name: 'Chlebek',
-			match: {
-				kills: 2,
-				deaths: 0
-			},
-			total: {
-				kills: 107,
-				deaths: 200
-			}
-		}
-	];
+	let showdowns: any[] = [];
+
+	onMount(async () => {
+		showdowns = await supabase
+			.from('showdowns')
+			.select(
+				`
+			profileid,
+			name,
+			mmr,
+			killed_by_me,
+			killed_me,
+			had_bounty
+		`
+			)
+			.order('created_at', { ascending: false })
+			.limit(3)
+			.then((a) => a.data ?? []);
+	});
 </script>
 
 <Container title="Last Showdowns">
@@ -62,31 +48,34 @@
 			{#each showdowns as showdown, i}
 				<tr
 					><td class="align-middle"
-						>{#if showdown.match.kills > showdown.match.deaths}
+						>{#if showdown.killed_by_me > showdown.killed_me}
 							<Focus class="inline w-5 fill-gold" />
-						{:else if showdown.match.kills < showdown.match.deaths}
+						{:else if showdown.killed_by_me < showdown.killed_me}
 							<Skull class="inline w-5 fill-red" />
 						{:else}
 							<ArrowUpDown class="inline w-5 fill-gray-500" />
 						{/if}
-						<span class="ml-1 align-middle">{showdown.name}</span></td
-					><td
+						<span class="ml-1 align-middle">{showdown.name} ({showdown.mmr})</span></td
+					>
+					<td
 						><span
 							class="align-middle"
-							class:text-gold={showdown.match.kills > showdown.match.deaths}
-							class:text-red={showdown.match.kills < showdown.match.deaths}
-							>{showdown.match.kills} : {showdown.match.deaths}</span
+							class:text-gold={showdown.killed_by_me > showdown.killed_me}
+							class:text-red={showdown.killed_by_me < showdown.killed_me}
+							>{showdown.killed_by_me} : {showdown.killed_me}</span
 						></td
-					><td
-						><span
-							class="align-middle"
-							class:text-gold={showdown.total.kills > showdown.total.deaths}
-							class:text-red={showdown.total.kills < showdown.total.deaths}
-							>{showdown.total.kills} : {showdown.total.deaths}</span
-						></td
-					></tr
+					><td>N/A</td></tr
 				>
 			{/each}
 		</tbody>
 	</table>
 </Container>
+
+<!-- 
+	<span
+							class="align-middle"
+							class:text-gold={showdown.total.killed_by_me > showdown.total.killed_me}
+							class:text-red={showdown.total.killed_by_me < showdown.total.killed_me}
+							>{showdown.total.killed_by_me} : {showdown.total.killed_me}</span
+						>
+ -->
