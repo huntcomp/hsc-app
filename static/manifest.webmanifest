@@ -1,7 +1,7 @@
 {
 	"name": "Hunt Companion",
 	"display": "standalone",
-	"start_url": "/app/",
+	"start_url": "/app",
 	"icons": [
 		{
 			"src": "/icon-192-rounded.png",
@@ -15,7 +15,7 @@
 			"type": "image/png"
 		}
 	],
-	"scope": "/app/",
+	"scope": "/app",
 	"theme_color": "#0E0F15",
 	"description": "Hunt Companion is an app to track your encounter statistics"
 }
