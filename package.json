@@ -18,6 +18,8 @@
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
 		"@poppanator/sveltekit-svg": "^2.1.2",
+		"@supabase/auth-helpers-sveltekit": "^0.8.7",
+		"@supabase/supabase-js": "^2.7.0",
 		"@sveltejs/adapter-vercel": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
 		"@types/cookie": "^0.5.1",

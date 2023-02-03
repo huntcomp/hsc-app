@@ -79,11 +79,11 @@
 						></td
 					><td
 						><span
-						class="align-middle"
-						class:text-gold={showdown.total.kills > showdown.total.deaths}
-						class:text-red={showdown.total.kills < showdown.total.deaths}
-						>{showdown.total.kills} : {showdown.total.deaths}</span
-					></td
+							class="align-middle"
+							class:text-gold={showdown.total.kills > showdown.total.deaths}
+							class:text-red={showdown.total.kills < showdown.total.deaths}
+							>{showdown.total.kills} : {showdown.total.deaths}</span
+						></td
 					></tr
 				>
 			{/each}

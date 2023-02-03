@@ -1,21 +1,42 @@
-<script>
+<script lang="ts">
+	import { page } from '$app/stores';
 	import Logo from '$lib/logo.svg';
+	import Auth from './Auth.svelte';
 	import UserMenu from './UserMenu.svelte';
+	import { supabase } from '$lib/supabaseClient';
+	import { invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange(() => {
+			invalidate('supabase:auth');
+		});
+
+		return () => {
+			subscription.unsubscribe();
+		};
+	});
 </script>
 
-<header class="flex items-center justify-between gap-2 py-4 pb-8">
-	<Logo class="w-10" />
-	<span class="flex-1 font-serif text-sm">Happy hunting!</span>
-	<UserMenu />
-</header>
+{#if !$page.data.session}
+	<Auth />
+{:else}
+	<header class="flex items-center justify-between gap-2 py-4 pb-8">
+		<Logo class="w-10" />
+		<span class="flex-1 font-serif text-sm">Happy hunting!</span>
+		<UserMenu />
+	</header>
 
-<main class="flex-1">
-	<slot />
-</main>
+	<main class="flex-1">
+		<slot />
+	</main>
 
-<footer>
-	<nav>NAV</nav>
-</footer>
+	<footer>
+		<nav>NAV</nav>
+	</footer>
+{/if}
 
 <style lang="postcss">
 	:global(body) {
