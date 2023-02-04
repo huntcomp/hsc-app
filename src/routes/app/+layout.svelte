@@ -6,6 +6,7 @@
 	import { supabase } from '$lib/supabaseClient';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import EditBox from 'remixicon/icons/Design/edit-box-line.svg';
 
 	onMount(() => {
 		const {
@@ -34,7 +35,7 @@
 	</main>
 
 	<footer>
-		<nav>NAV</nav>
+		<nav class="p-4 text-center"><EditBox class="inline align-middle w-4 fill-current mr-2" /><span class="align-middle">WORK IN PROGRESS</span></nav>
 	</footer>
 {/if}
 
