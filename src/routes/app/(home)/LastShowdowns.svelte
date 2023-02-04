@@ -44,7 +44,14 @@
 							class:text-red={showdown.killed_by_me < showdown.killed_me}
 							>{showdown.killed_by_me} : {showdown.killed_me}</span
 						></td
-					><td>N/A</td></tr
+					><td
+						><span
+							class="align-middle"
+							class:text-gold={showdown.total_killed_by_me > showdown.total_killed_me}
+							class:text-red={showdown.total_killed_by_me < showdown.total_killed_me}
+							>{showdown.total_killed_by_me} : {showdown.total_killed_me}</span
+						></td
+					></tr
 				>
 			{/each}
 		</tbody>
