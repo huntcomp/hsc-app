@@ -7,35 +7,8 @@
 	import ArrowUpDown from 'remixicon/icons/System/arrow-up-down-line.svg';
 	import Focus from 'remixicon/icons/Design/focus-3-line.svg';
 	import { formatDistanceToNow } from 'date-fns';
-	import { supabase } from '$lib/supabaseClient';
-	import { onMount } from 'svelte';
 
-	let games: any[] = [];
-
-	onMount(async () => {
-		games = await supabase
-			.from('games')
-			.select(
-				`
-			created_at,
-			bounty_picked_up,
-			bounty_extracted,
-			mmr,
-			team_extraction,
-			showdowns (
-				profileid,
-				name,
-				mmr,
-				killed_by_me,
-				killed_me,
-				had_bounty
-			)
-		`
-			)
-			.order('created_at', { ascending: false })
-			.limit(4)
-			.then((a) => a.data ?? []);
-	});
+	export let games: any[] = [];
 
 	const getKilledByMe = (match: any) =>
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_by_me, 0);

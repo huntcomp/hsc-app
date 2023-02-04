@@ -3,28 +3,8 @@
 	import Skull from 'remixicon/icons/User/skull-line.svg';
 	import Focus from 'remixicon/icons/Design/focus-3-line.svg';
 	import ArrowUpDown from 'remixicon/icons/System/arrow-up-down-line.svg';
-	import { onMount } from 'svelte';
-	import { supabase } from '$lib/supabaseClient';
 
-	let showdowns: any[] = [];
-
-	onMount(async () => {
-		showdowns = await supabase
-			.from('showdowns')
-			.select(
-				`
-			profileid,
-			name,
-			mmr,
-			killed_by_me,
-			killed_me,
-			had_bounty
-		`
-			)
-			.order('created_at', { ascending: false })
-			.limit(3)
-			.then((a) => a.data ?? []);
-	});
+	export let showdowns: any[] = [];
 </script>
 
 <Container title="Last Showdowns">
