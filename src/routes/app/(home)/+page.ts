@@ -40,7 +40,7 @@ export const load: PageLoad = async (event) => {
   `
 		)
 		.order('created_at', { ascending: false })
-		.limit(3)
+		.limit(6)
 		.then((_) =>
 			(_.data ?? []).map((a) => Object.assign({ total_killed_by_me: 0, total_killed_me: 0 }, a))
 		);

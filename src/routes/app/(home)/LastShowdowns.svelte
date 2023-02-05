@@ -57,12 +57,3 @@
 		</tbody>
 	</table>
 </Container>
-
-<!-- 
-	<span
-							class="align-middle"
-							class:text-gold={showdown.total.killed_by_me > showdown.total.killed_me}
-							class:text-red={showdown.total.killed_by_me < showdown.total.killed_me}
-							>{showdown.total.killed_by_me} : {showdown.total.killed_me}</span
-						>
- -->
