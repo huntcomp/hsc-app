@@ -35,7 +35,7 @@
 	</main>
 
 	<footer>
-		<nav class="p-4 text-center"><EditBox class="inline align-middle w-4 fill-current mr-2" /><span class="align-middle">WORK IN PROGRESS</span></nav>
+		<nav class="p-4 text-center"><EditBox class="inline align-middle w-4 fill-current mr-2" /><span class="align-middle">ALPHA PREVIEW</span></nav>
 	</footer>
 {/if}
 
