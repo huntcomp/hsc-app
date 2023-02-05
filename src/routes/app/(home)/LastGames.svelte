@@ -28,7 +28,7 @@
 						class="inline w-3 fill-current"
 					/></th
 				>
-				<th>MMR</th>
+				<th>Start MMR</th>
 			</tr>
 		</thead>
 		<tbody>
