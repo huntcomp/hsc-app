@@ -6,6 +6,7 @@
 	import Skull from 'remixicon/icons/User/skull-line.svg';
 	import ArrowUpDown from 'remixicon/icons/System/arrow-up-down-line.svg';
 	import Focus from 'remixicon/icons/Design/focus-3-line.svg';
+	import Question from 'remixicon/icons/System/question-line.svg';
 	import { formatDistanceToNow } from 'date-fns';
 
 	export let games: any[] = [];
@@ -28,7 +29,7 @@
 						class="inline w-3 fill-current"
 					/></th
 				>
-				<th>Start MMR</th>
+				<th>MMR</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -60,16 +61,19 @@
 							>{getKilledByMe(game)} : {getKilledMe(game)}</span
 						></td
 					><td
-						>{#if games[i + 1] != null && game.mmr - games[i + 1].mmr !== 0}<span
+						>{#if i === 0}<Question
+								class="inline w-5 fill-gray-500"
+							/>{/if}{#if games[i + 1] != null && games[i + 2] != null && games[i + 1] - games[i + 2].mmr !== 0}<span
 								class="align-middle"
-								class:text-gold={game.mmr - games[i + 1].mmr > 0}
-								class:text-red={game.mmr - games[i + 1].mmr < 0}
-								>{#if game.mmr - games[i + 1].mmr > 0}+{/if}{game.mmr - games[i + 1].mmr}</span
-							>{#if game.mmr - games[i + 1].mmr > 0}<ArrowRightUp
+								class:text-gold={games[i + 1] - games[i + 2].mmr > 0}
+								class:text-red={games[i + 1] - games[i + 2].mmr < 0}
+								>{#if games[i + 1] - games[i + 2].mmr > 0}+{/if}{games[i + 1] -
+									games[i + 2].mmr}</span
+							>{#if games[i + 1] - games[i + 2].mmr > 0}<ArrowRightUp
 									class="inline w-4 fill-gold align-text-top"
-								/>{/if}{#if game.mmr - games[i + 1].mmr < 0}<ArrowRightDown
+								/>{/if}{#if games[i + 1] - games[i + 2].mmr < 0}<ArrowRightDown
 									class="inline w-4 fill-red align-text-top"
-								/>{/if}{/if}<span class="align-middle">{game.mmr}</span></td
+								/>{/if}{/if}<span class="align-middle">{games[i + 1]}</span></td
 					></tr
 				>
 			{/each}
