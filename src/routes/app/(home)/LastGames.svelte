@@ -63,17 +63,17 @@
 					><td
 						>{#if i === 0}<Question
 								class="inline w-5 fill-gray-500"
-							/>{/if}{#if games[i + 1] != null && games[i + 2] != null && games[i + 1] - games[i + 2].mmr !== 0}<span
+							/>{/if}{#if games[i + 1] != null && games[i + 2] != null && games[i + 1].mmr - games[i + 2].mmr !== 0}<span
 								class="align-middle"
-								class:text-gold={games[i + 1] - games[i + 2].mmr > 0}
-								class:text-red={games[i + 1] - games[i + 2].mmr < 0}
-								>{#if games[i + 1] - games[i + 2].mmr > 0}+{/if}{games[i + 1] -
+								class:text-gold={games[i + 1].mmr - games[i + 2].mmr > 0}
+								class:text-red={games[i + 1].mmr - games[i + 2].mmr < 0}
+								>{#if games[i + 1].mmr - games[i + 2].mmr > 0}+{/if}{games[i + 1].mmr -
 									games[i + 2].mmr}</span
-							>{#if games[i + 1] - games[i + 2].mmr > 0}<ArrowRightUp
+							>{#if games[i + 1].mmr - games[i + 2].mmr > 0}<ArrowRightUp
 									class="inline w-4 fill-gold align-text-top"
-								/>{/if}{#if games[i + 1] - games[i + 2].mmr < 0}<ArrowRightDown
+								/>{/if}{#if games[i + 1].mmr - games[i + 2].mmr < 0}<ArrowRightDown
 									class="inline w-4 fill-red align-text-top"
-								/>{/if}{/if}<span class="align-middle">{games[i + 1]}</span></td
+								/>{/if}{/if}<span class="align-middle">{games[i + 1].mmr}</span></td
 					></tr
 				>
 			{/each}
