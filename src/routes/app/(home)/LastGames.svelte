@@ -6,7 +6,7 @@
 	import Skull from 'remixicon/icons/User/skull-line.svg';
 	import ArrowUpDown from 'remixicon/icons/System/arrow-up-down-line.svg';
 	import Focus from 'remixicon/icons/Design/focus-3-line.svg';
-	import Question from 'remixicon/icons/System/question-line.svg';
+	import Subtract from 'remixicon/icons/System/subtract-line.svg';
 	import { formatDistanceToNow } from 'date-fns';
 
 	export let games: any[] = [];
@@ -61,7 +61,7 @@
 							>{getKilledByMe(game)} : {getKilledMe(game)}</span
 						></td
 					><td
-						>{#if i === 0}<Question
+						>{#if i === 0}<Subtract
 								class="inline w-5 fill-gray-500"
 							/>{:else}{#if games[i - 1] != null && games[i] != null && games[i - 1].mmr - games[i].mmr !== 0}<span
 									class="align-middle"
