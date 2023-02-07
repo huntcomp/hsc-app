@@ -15,8 +15,6 @@
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_by_me, 0);
 	const getKilledMe = (match: any) =>
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_me, 0);
-
-	$: max3Games = games.slice(0, 3);
 </script>
 
 <Container title="Last games">
