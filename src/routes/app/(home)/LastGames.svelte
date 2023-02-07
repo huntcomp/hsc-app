@@ -31,14 +31,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#if max3Games.length === 0}
+			{#if games.length === 0}
 				<tr>
 					<td>No games yet</td>
 					<td />
 					<td />
 				</tr>
 			{/if}
-			{#each max3Games as game, i}
+			{#each games as game, i}
 				<tr
 					><td class="align-middle"
 						>{#if game.bounty_extracted > 0}
