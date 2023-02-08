@@ -31,11 +31,11 @@
 			<span class="align-bottom font-serif text-6xl font-bold">{mmr}</span>
 			<span class="align-bottom font-serif text-2xl">
 				{#if change >= 0}
-					<span class="align-middle text-gold">+{change}</span><ArrowRightUp
+					<span class="align-middle text-gold font-bold">+{change}</span><ArrowRightUp
 						class="inline w-5 fill-gold align-text-top"
 					/>
 				{:else if change < 0}
-					<span class="align-middle text-red">{change}</span><ArrowRightDown
+					<span class="align-middle text-red font-bold">{change}</span><ArrowRightDown
 						class="inline w-5 fill-red align-text-top"
 					/>
 				{/if}
