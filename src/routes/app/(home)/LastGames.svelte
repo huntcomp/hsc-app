@@ -38,7 +38,7 @@
 					<td />
 				</tr>
 			{/if}
-			{#each games as game, i}
+			{#each games.slice(0, 4) as game, i}
 				<tr
 					><td class="align-middle"
 						>{#if game.bounty_extracted > 0}

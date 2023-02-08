@@ -25,7 +25,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each showdowns as showdown, i}
+			{#each showdowns.slice(0, 6) as showdown, i}
 				<tr
 					><td class="align-middle"
 						>{#if showdown.killed_by_me > showdown.killed_me}

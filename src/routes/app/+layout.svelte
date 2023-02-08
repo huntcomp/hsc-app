@@ -24,7 +24,7 @@
 {#if !$page.data.session}
 	<Auth />
 {:else}
-	<header class="flex items-center justify-between gap-2 py-4 pb-8">
+	<header class="flex items-center justify-between gap-2 py-4 pb-6">
 		<Logo class="w-10" />
 		<span class="flex-1 font-serif text-sm">Happy hunting!</span>
 		<UserMenu />

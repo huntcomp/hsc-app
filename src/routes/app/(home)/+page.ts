@@ -1,4 +1,5 @@
 import { getSupabase } from '@supabase/auth-helpers-sveltekit';
+import { subHours } from 'date-fns';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async (event) => {
@@ -24,7 +25,7 @@ export const load: PageLoad = async (event) => {
 `
 		)
 		.order('created_at', { ascending: false })
-		.limit(4)
+		.limit(8)
 		.then((_) => _.data ?? []);
 
 	const showdowns = await supabaseClient
@@ -40,7 +41,7 @@ export const load: PageLoad = async (event) => {
   `
 		)
 		.order('created_at', { ascending: false })
-		.limit(5)
+		.limit(6)
 		.then((_) =>
 			(_.data ?? []).map((a) => Object.assign({ total_killed_by_me: 0, total_killed_me: 0 }, a))
 		);
