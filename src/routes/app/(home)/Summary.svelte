@@ -44,7 +44,7 @@
 		<MMRStars value={mmr} />
 	</section>
 	<section
-		class="bg-linear-dark absolute bottom-0 right-0 top-0 w-2/6 p-3 rounded-md flex flex-col justify-between"
+		class="bg-linear-dark absolute bottom-0 right-0 top-0 w-2/6 p-3 rounded-md flex flex-col justify-end gap-2"
 	>
 		<div class="flex items-center gap-2">
 			<span class="bg-linear-gold rounded-full w-7 h-7 flex justify-center items-center"><Focus class="inline w-5 fill-dark" /></span><span
