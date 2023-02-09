@@ -2,7 +2,7 @@
 	export let title: string;
 </script>
 
-<section class="-ml-1 -mr-1 mb-5 rounded-md bg-red p-3 relative">
+<section class="relative -ml-1 -mr-1 mb-5 rounded-md bg-red p-3">
 	<header class="mb-3 font-serif font-bold uppercase tracking-wider">{title}</header>
 	<slot />
 </section>

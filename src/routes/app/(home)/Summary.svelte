@@ -31,11 +31,11 @@
 			<span class="align-bottom font-serif text-6xl font-bold">{mmr}</span>
 			<span class="align-bottom font-serif text-2xl">
 				{#if change >= 0}
-					<span class="align-middle text-gold font-bold">+{change}</span><ArrowRightUp
+					<span class="align-middle font-bold text-gold">+{change}</span><ArrowRightUp
 						class="inline w-5 fill-gold align-text-top"
 					/>
 				{:else if change < 0}
-					<span class="align-middle text-red font-bold">{change}</span><ArrowRightDown
+					<span class="align-middle font-bold text-red">{change}</span><ArrowRightDown
 						class="inline w-5 fill-red align-text-top"
 					/>
 				{/if}
@@ -44,20 +44,22 @@
 		<MMRStars value={mmr} />
 	</section>
 	<section
-		class="bg-linear-dark absolute bottom-0 right-0 top-0 w-2/6 p-3 rounded-md flex flex-col justify-end gap-2"
+		class="bg-linear-dark absolute bottom-0 right-0 top-0 flex w-2/6 flex-col justify-end gap-2 rounded-md p-3"
 	>
 		<div class="flex items-center gap-2">
-			<span class="bg-linear-gold rounded-full w-7 h-7 flex justify-center items-center"><Focus class="inline w-5 fill-dark" /></span><span
-				class="font-serif text-2xl font-bold text-gold">{kills}</span
-			>
+			<span class="bg-linear-gold flex h-7 w-7 items-center justify-center rounded-full"
+				><Focus class="fill-dark inline w-5" /></span
+			><span class="font-serif text-2xl font-bold text-gold">{kills}</span>
 		</div>
 		<div class="flex items-center gap-2">
-			<span class="bg-linear-red rounded-full w-7 h-7 flex justify-center items-center"><Skull class="inline w-5 fill-dark" /></span><span
-				class="font-serif text-2xl font-bold text-red">{deaths}</span
-			>
+			<span class="bg-linear-red flex h-7 w-7 items-center justify-center rounded-full"
+				><Skull class="fill-dark inline w-5" /></span
+			><span class="font-serif text-2xl font-bold text-red">{deaths}</span>
 		</div>
 		<div class="flex items-center gap-2">
-			<span class="w-7 h-7 flex justify-center items-center"><Divide class="inline w-7 fill-white" /></span><span class="font-serif text-3xl font-bold text-white"
+			<span class="flex h-7 w-7 items-center justify-center"
+				><Divide class="inline w-7 fill-white" /></span
+			><span class="font-serif text-3xl font-bold text-white"
 				>{deaths > 0 ? Math.round((kills / deaths) * 100) / 100 : '∞'}</span
 			>
 		</div>
