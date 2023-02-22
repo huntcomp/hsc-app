@@ -15,6 +15,25 @@
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_by_me, 0);
 	const getKilledMe = (match: any) =>
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_me, 0);
+
+	const estimatedMmr = (() => {
+		if (games.length < 1) {
+			return undefined;
+		}
+
+		// https://mattmazzola.medium.com/understanding-the-elo-rating-system-264572c7a2b4
+		const Ra = games[0].mmr;
+		let dRa = 0;
+		const K = 30;
+
+		for (const s of games[0].showdowns) {
+			const Rb = s.mmr;
+			const Ea = 1 / (1 + Math.pow(10, (Rb - Ra) / 400));
+			dRa += s.killed_by_me * K * (1 - Ea) + s.killed_me * K * (0 - Ea);
+		}
+
+		return Math.round(Ra + dRa);
+	})();
 </script>
 
 <Container title="Last games">
@@ -59,9 +78,20 @@
 							>{getKilledByMe(game)} : {getKilledMe(game)}</span
 						></td
 					><td
-						>{#if i === 0}<Subtract
-								class="inline w-5 fill-gray-500"
-							/>{:else}{#if games[i - 1] != null && games[i] != null && games[i - 1].mmr - games[i].mmr !== 0}<span
+						>{#if i === 0}{#if estimatedMmr != null}
+								<span
+									class="align-middle"
+									class:text-gold={estimatedMmr - games[0].mmr > 0}
+									class:text-red={estimatedMmr - games[0].mmr < 0}
+									>{#if estimatedMmr - games[0].mmr > 0}+{/if}{estimatedMmr - games[0].mmr}</span
+								>{#if estimatedMmr - games[0].mmr > 0}<ArrowRightUp
+										class="inline w-4 fill-gold align-text-top"
+									/>{/if}{#if estimatedMmr - games[0].mmr < 0}<ArrowRightDown
+										class="inline w-4 fill-red align-text-top"
+									/>{/if}
+								{estimatedMmr}{:else}<Subtract
+									class="inline w-5 fill-gray-500"
+								/>{/if}{:else}{#if games[i - 1] != null && games[i] != null && games[i - 1].mmr - games[i].mmr !== 0}<span
 									class="align-middle"
 									class:text-gold={games[i - 1].mmr - games[i].mmr > 0}
 									class:text-red={games[i - 1].mmr - games[i].mmr < 0}
