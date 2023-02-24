@@ -16,7 +16,7 @@
 	const getKilledMe = (match: any) =>
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_me, 0);
 
-	const estimatedMmr = ((g: any[]) => {
+	$: estimatedMmr = ((g: any[]) => {
 		if (g.length < 1) {
 			return undefined;
 		}
