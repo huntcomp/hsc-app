@@ -89,7 +89,7 @@
 									/>{/if}{#if estimatedMmr - games[0].mmr < 0}<ArrowRightDown
 										class="inline w-4 fill-red align-text-top"
 									/>{/if}
-								{estimatedMmr}{:else}<Subtract
+								<span class="align-middle">{estimatedMmr}</span>{:else}<Subtract
 									class="inline w-5 fill-gray-500"
 								/>{/if}{:else}{#if games[i - 1] != null && games[i] != null && games[i - 1].mmr - games[i].mmr !== 0}<span
 									class="align-middle"
