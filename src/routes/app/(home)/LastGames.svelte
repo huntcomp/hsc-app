@@ -16,24 +16,24 @@
 	const getKilledMe = (match: any) =>
 		match.showdowns.reduce((p: number, n: any) => p + n.killed_me, 0);
 
-	const estimatedMmr = (() => {
-		if (games.length < 1) {
+	const estimatedMmr = ((g: any[]) => {
+		if (g.length < 1) {
 			return undefined;
 		}
 
 		// https://mattmazzola.medium.com/understanding-the-elo-rating-system-264572c7a2b4
-		const Ra = games[0].mmr;
+		const Ra = g[0].mmr;
 		let dRa = 0;
 		const K = 30;
 
-		for (const s of games[0].showdowns) {
+		for (const s of g[0].showdowns) {
 			const Rb = s.mmr;
 			const Ea = 1 / (1 + Math.pow(10, (Rb - Ra) / 400));
 			dRa += s.killed_by_me * K * (1 - Ea) + s.killed_me * K * (0 - Ea);
 		}
 
 		return Math.round(Ra + dRa);
-	})();
+	})(games);
 </script>
 
 <Container title="Last games">
