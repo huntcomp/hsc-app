@@ -24,7 +24,7 @@
 		// https://mattmazzola.medium.com/understanding-the-elo-rating-system-264572c7a2b4
 		const Ra = g[0].mmr;
 		let dRa = 0;
-		const K = 30;
+		const K = 32;
 
 		for (const s of g[0].showdowns) {
 			const Rb = s.mmr;
